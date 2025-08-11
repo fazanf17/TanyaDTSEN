@@ -228,7 +228,7 @@ if os.path.exists(pdf_folder):
     if pdf_files:
         for pdf in sorted(pdf_files):
             display_name = os.path.splitext(pdf)[0].replace("_", " ").title()
-            pdf_path = "file:..//bahan-chatbot//pdf//" + os.path.join(pdf_folder, pdf).replace("\\", "/")
+            pdf_path = "file:../bahan-chatbot/pdf/" + os.path.join(pdf_folder, pdf).replace("\\", "/")
             st.sidebar.markdown(
                 f"""
                 <div style="margin-bottom:4px; font-size:14px;">
