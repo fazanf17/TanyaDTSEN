@@ -8,38 +8,8 @@ import json
 import hashlib
 from IPython.display import display, Markdown
 
-# =============== Konfigurasi Gemini + Chatbot ===============
-API_KEY = "AIzaSyAXMr24XVP1ohfCO29GdM-9nm1IpBF_A_o"
-try:
-    genai.configure(api_key=API_KEY)
-    print("✅ API Key configured!")
-except Exception as e:
-    print(f"❌ Gagal mengkonfigurasi API Key: {e}")
-    exit()
-
-my_generation_config = {
-    "temperature": 0.5,
-    "max_output_tokens": 4096,
-    "top_p": 0.6
-}
-my_safety_settings = {
-    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-}
-model = genai.GenerativeModel(
-    model_name="models/gemini-2.5-pro",
-    generation_config=my_generation_config,
-    safety_settings=my_safety_settings
-)
-
-
-combined_txt_path = "source-chatbot.txt"
-print("\n" + "="*50)
-chatbot = main.TxtChatbot(model=model)
-success = chatbot.load_from_combined_txt(combined_txt_path)
-st.session_state.chatbot = chatbot
+if "chatbot" not in st.session_state:
+    st.session_state.chatbot = main.init_chatbot()
 
 
 # =============== UI STREAMLIT ===============
@@ -61,13 +31,21 @@ a.doc-link:hover {
 
 # --- Sidebar untuk daftar dokumen ---
 st.sidebar.title("📂 Daftar Dokumen")
-pdf_folder = os.path.abspath(os.path.join("..", "bahan-chatbot", "pdf"))
+base_dir = os.path.dirname(__file__)  # folder ai-backend
+pdf_folder = os.path.abspath(os.path.join(base_dir, "..", "bahan-chatbot", "pdf"))
+# pdf_folder = os.path.abspath(os.path.join("..", "bahan-chatbot", "pdf"))
 if os.path.exists(pdf_folder):
     pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith(".pdf")]
     if pdf_files:
         for pdf in sorted(pdf_files):
             display_name = os.path.splitext(pdf)[0].replace("_", " ").title()
-            pdf_path = "file:../bahan-chatbot/pdf/" + os.path.join(pdf_folder, pdf).replace("\\", "/")
+            # Path folder PDF relatif terhadap lokasi main.py
+            base_dir = os.path.dirname(__file__)  # folder ai-backend
+            pdf_folder = os.path.abspath(os.path.join(base_dir, "..", "bahan-chatbot", "pdf"))
+
+            pdf_path = os.path.join(pdf_folder, pdf).replace("\\", "/")
+            # pdf_path = "file:../bahan-chatbot/pdf/" + os.path.join(pdf_folder, pdf).replace("\\", "/")
+            # pdf_url = "file://" + pdf_path
             st.sidebar.markdown(
                 f"""
                 <div style="margin-bottom:4px; font-size:14px;">

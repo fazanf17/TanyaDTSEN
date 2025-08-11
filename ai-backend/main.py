@@ -169,10 +169,9 @@ class TxtChatbot:
             print("✍️  Merangkum informasi untuk jawaban akhir...")
             return self._call_model(synthesis_prompt)
         
-if __name__ == "__main__":
+API_KEY = "AIzaSyD_2j6h_4TcXk8roZPeEE5NW0bPaQRsnQo"  # ⬅️ ganti dengan API key asli kamu
 
-    # Konfigurasi Gemini Models
-    API_KEY = "AIzaSyD_2j6h_4TcXk8roZPeEE5NW0bPaQRsnQo"
+def init_model():
     try:
         genai.configure(api_key=API_KEY)
         print("✅ API Key configured!")
@@ -191,13 +190,25 @@ if __name__ == "__main__":
         HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
     }
-    model = genai.GenerativeModel(
+
+    return genai.GenerativeModel(
         model_name="models/gemini-2.5-pro",
         generation_config=my_generation_config,
         safety_settings=my_safety_settings
     )
 
-    combined_txt_path = "source-chatbot.txt"
-    print("\n" + "="*50)
-    chatbot = TxtChatbot(model=model)
-    success = chatbot.load_from_combined_txt(combined_txt_path)
+def init_chatbot():
+    model = init_model()
+
+    BASE_DIR = os.path.dirname(__file__)
+    combined_txt_path = os.path.join(BASE_DIR, "source-chatbot.txt")
+    print("Looking for:", combined_txt_path, "exists:", os.path.exists(combined_txt_path))
+
+    cb = TxtChatbot(model=model)
+    success = cb.load_from_combined_txt(combined_txt_path)
+    print("load_from_combined_txt returned:", success)
+
+    return cb
+
+if __name__ == "__main__":
+    chatbot = init_chatbot()
