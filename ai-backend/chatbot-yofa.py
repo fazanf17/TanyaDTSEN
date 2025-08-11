@@ -196,80 +196,12 @@ model = genai.GenerativeModel(
 )
 
 
-# Inisialisasi chatbot hanya sekali
-# if "chatbot" not in st.session_state:
-#     chatbot = TxtChatbot(model=model)
-#     success = chatbot.load_from_combined_txt("source-chatbot.txt")
-#     if not success:
-#         st.error("Gagal memuat data chatbot. Cek file source-chatbot.txt!")
-#     st.session_state.chatbot = chatbot
-
 combined_txt_path = "source-chatbot.txt"
 print("\n" + "="*50)
 chatbot = TxtChatbot(model=model)
 success = chatbot.load_from_combined_txt(combined_txt_path)
 st.session_state.chatbot = chatbot
 
-# # =============== UI STREAMLIT ===============
-# st.set_page_config(page_title="Tanya DTSEN", page_icon="🤖", layout="centered")
-
-# st.title("🤖 Tanya DTSEN")
-# st.markdown("""
-# Selamat datang di **Tanya DTSEN!**  
-# Aku adalah asisten virtual yang akan menjawab pertanyaanmu seputar **DTSEN**.  
-# """)
-
-# # Simpan riwayat chat
-# if "messages" not in st.session_state:
-#     st.session_state.messages = []
-
-# # Tampilkan riwayat chat
-# for msg in st.session_state.messages:
-#     with st.chat_message(msg["role"]):
-#         st.markdown(msg["text"])
-
-# # Input pertanyaan
-# if question := st.chat_input("Tulis pertanyaan kamu..."):
-#     # Simpan & tampilkan pertanyaan user
-#     st.session_state.messages.append({"role": "user", "text": question})
-#     with st.chat_message("user"):
-#         st.markdown(question)
-
-#     # Tempat animasi loading + jawaban bot
-#     with st.chat_message("assistant"):
-#         placeholder = st.empty()
-
-#         # Animasi titik berjalan (bot berpikir)
-#         loading_text = "🤖 Sedang berpikir"
-#         for i in range(6):  # loop animasi
-#             dots = "." * (i % 4)
-#             placeholder.markdown(f"{loading_text}{dots}")
-#             time.sleep(0.4)
-
-#         # Ambil jawaban bot
-#         answer = st.session_state.chatbot.get_response(question)
-
-#         # Streaming per paragraf / blok markdown biar format tetap rapi
-#         placeholder.empty()
-#         streamed_text = ""
-#         for paragraph in answer.split("\n\n"):
-#             streamed_text += paragraph + "\n\n"
-#             placeholder.markdown(streamed_text)
-#             time.sleep(0.4)  # jeda antar paragraf
-
-#     # Simpan jawaban bot
-#     st.session_state.messages.append({"role": "assistant", "text": streamed_text.strip()})
-
-#     # Auto-scroll ke chat terakhir
-#     st.markdown(
-#         """
-#         <script>
-#         var chatBox = window.parent.document.querySelector(".stChatMessage:last-child");
-#         if (chatBox) chatBox.scrollIntoView({ behavior: 'smooth' });
-#         </script>
-#         """,
-#         unsafe_allow_html=True
-#     )
 
 # =============== UI STREAMLIT ===============
 st.set_page_config(page_title="Tanya DTSEN", page_icon="🤖", layout="wide")
