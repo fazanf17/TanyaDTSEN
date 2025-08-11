@@ -169,7 +169,7 @@ class TxtChatbot:
             print("✍️  Merangkum informasi untuk jawaban akhir...")
             return self._call_model(synthesis_prompt)
         
-API_KEY = "AIzaSyD_2j6h_4TcXk8roZPeEE5NW0bPaQRsnQo"  # ⬅️ ganti dengan API key asli kamu
+API_KEY = "AIzaSyAXMr24XVP1ohfCO29GdM-9nm1IpBF_A_o"
 
 def init_model():
     try:
