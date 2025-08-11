@@ -17,7 +17,7 @@ PROMPT_TEMPLATES = {
                         4. Batasi jawaban Anda MAKSIMAL 200 Kata saja.
                         5. Jika informasi tidak ditemukan dalam dokumen, jawab dengan: "Informasi tidak ditemukan dalam sumber yang dimiliki"
 
-                        <dokumen>
+                        <dokumen>pip
                         {chunk}
                         </dokumen>
 

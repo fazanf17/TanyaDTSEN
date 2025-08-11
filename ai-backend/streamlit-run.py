@@ -1,5 +1,12 @@
-import streamlit as st
 import main  # Import fungsi dari main.py
+import streamlit as st
+import time
+import google.generativeai as genai
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
+import os
+import json
+import hashlib
+from IPython.display import display, Markdown
 
 # =============== Konfigurasi Gemini + Chatbot ===============
 API_KEY = "AIzaSyAXMr24XVP1ohfCO29GdM-9nm1IpBF_A_o"
@@ -30,7 +37,7 @@ model = genai.GenerativeModel(
 
 combined_txt_path = "source-chatbot.txt"
 print("\n" + "="*50)
-chatbot = TxtChatbot(model=model)
+chatbot = main.TxtChatbot(model=model)
 success = chatbot.load_from_combined_txt(combined_txt_path)
 st.session_state.chatbot = chatbot
 
