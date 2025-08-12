@@ -1,0 +1,146 @@
+**Bahan Ajar Groundcheck DTSEN - Kemensos**
+
+**Jakarta, 25-26 Februari 2025**
+
+**Variabel Pemutakhiran Data**
+
+Terdapat 39 variabel Groundcheck: 13 variabel individu dan 26 variabel keluarga.
+
+**Variabel Individu:**  Identitas, status hubungan dengan kepala keluarga, status perkawinan, pekerjaan, kepemilikan usaha, disabilitas, dan riwayat penyakit kronis.  Variabel `nama gadis ibu kandung`, `keterampilan individu`, `pendapatan`, dan `penyandang disabilitas` menggunakan kondef Kemensos; sisanya menggunakan kondef Regsosek.
+
+**Variabel Keluarga:** Identitas keluarga, perumahan (status kepemilikan, jenis lantai/dinding/atap terluas, sumber air minum & penerangan utama), data ID pelanggan PLN, sanitasi (fasilitas BAB, jenis kloset, pembuangan akhir tinja), kepemilikan aset (tabung gas, lemari es, AC, pemanas air, telepon rumah, TV datar, emas perhiasan, komputer/laptop/tablet, sepeda motor, sepeda, mobil, perahu, kapal/perahu motor, smartphone, sawah/kebun, lahan lain, rumah lain), dan kepemilikan ternak (besar & kecil).
+
+
+**Ground Check Variabel Individu - Kependudukan**
+
+Daftar individu diverifikasi. Pertanyaan terkait keberadaan: Ditemukan (pendamping PKH masih menemukan individu dalam wilayah kerjanya), Pindah/Tidak ditemukan (pendamping PKH tidak menemukan individu dalam wilayah kerjanya), Meninggal (sesuai pengakuan responden).  Jika ditemukan, lanjut ke pertanyaan selanjutnya; jika tidak, hentikan verifikasi.
+
+* **Nomor Kartu Keluarga (KK):**  Apakah nomor KK pada aplikasi sama dengan di lapangan? Jika tidak sama, masukkan nomor KK baru (berdasarkan KK). Nomor KK terdiri dari 16 digit angka.
+* **Nama:** Apakah nama sama dengan dokumen kependudukan resmi (akta kelahiran, KTP, KK)?  Perbedaan satu huruf, spasi, atau tanda baca dianggap tidak sama. Jika tidak sama, masukkan nama baru (berdasarkan KK).
+* **Wilayah (Provinsi, Kabupaten/Kota, Kecamatan, Kelurahan/Desa):** Apakah wilayah sama dengan aplikasi? Jika tidak sama, masukkan wilayah baru (berdasarkan KK).
+* **Nama Gadis Ibu Kandung:** Konsep Kemensos; penjelasan akan disampaikan oleh pihak Kemensos.
+* **Alamat:** Isikan alamat lengkap, termasuk jalan/gang dan nomor rumah (de facto).
+* **Jenis Kelamin:** Isikan sesuai dokumen resmi (KK).
+* **Tanggal Lahir:** Isikan sesuai dokumen resmi (KK); sistem otomatis menampilkan umur. Umur digunakan untuk memvalidasi pertanyaan terkait partisipasi sekolah, pekerjaan, dan usaha.
+* **Tempat Lahir:** Isikan sesuai dokumen resmi (KK).
+* **Status Perkawinan:** Belum kawin, kawin (termasuk kawin siri), cerai hidup (termasuk yang belum resmi), cerai mati.
+* **Status Hubungan Anggota Keluarga dengan Kepala Keluarga:** Kepala Keluarga, Istri/Suami, Anak (kandung, tiri, angkat), Menantu, Cucu, Orang tua/mertua, Pembantu/sopir, Lainnya.
+* **Status Partisipasi Sekolah (5 tahun ke atas):** Bersekolah, Tidak/belum pernah sekolah, Masih sekolah, Tidak bersekolah lagi.  Pertanyaan tambahan muncul jika pilihan selain "Tidak/belum pernah sekolah" dipilih.
+* **Jenjang dan Jenis Pendidikan Tertinggi yang Pernah/Sedang Diduduki:**  Penjelasan rinci untuk setiap jenjang (Paket A/B/C, SD/MI, SMP/MTs, SMA/MA/SMK/MAK, D1/D2/D3, D4/S1, S2, S3, Profesi). Tampilkan screenshot aplikasi.
+* **Kelas Tertinggi yang Pernah/Sedang Diduduki:** Panduan isian kuesioner untuk setiap jenjang pendidikan (SMP/sederajat, SMA/sederajat, Paket A/B/C, Perguruan Tinggi). Tampilkan screenshot aplikasi.  Tamat sekolah diberi kode 8; pendidikan profesi diberi kode 1 (jika sedang menempuh) atau 8 (jika lulus).
+* **Ijazah Tertinggi yang Dimiliki:**  Terdapat 23 pilihan jawaban, termasuk "Tidak Punya Ijazah SD".  Penjelasan sama dengan "Jenjang dan Jenis Pendidikan Tertinggi", dengan tambahan pilihan "Tidak Punya Ijazah SD". Tampilkan screenshot aplikasi.
+* **Status Bekerja/Membantu Bekerja:** Bekerja (kode 1), Tidak bekerja (kode 2). Jika "Ya", tampilkan pertanyaan tambahan: Lapangan Usaha dan Status Dalam Pekerjaan.
+* **Lapangan Usaha dari Pekerjaan Utama:**  Panduan pengisian, contoh pengisian kode. Tampilkan screenshot aplikasi.
+* **Status/Kedudukan dalam Pekerjaan Utama:** Berusaha sendiri, Berusaha dibantu buruh tidak tetap/tidak dibayar, Berusaha dibantu buruh tetap/dibayar, Buruh/karyawan/pegawai swasta, PNS/TNI/POLRI/BUMN/BUMD/Pejabat Negara, Pekerja bebas pertanian, Pekerja keluarga/tidak dibayar, Pekerja bebas non-pertanian. Tampilkan screenshot aplikasi.
+* **Pendapatan Sebulan Terakhir:** Konsep Kemensos; penjelasan akan disampaikan oleh pihak Kemensos.
+* **Keterampilan Khusus/Sertifikat Keahlian yang Dimiliki:** Konsep Kemensos; penjelasan akan disampaikan oleh pihak Kemensos.
+* **Kepemilikan Usaha Sendiri/Bersama:** Ya (kode 1), Tidak (kode 2). Jika "Ya", tampilkan lima pertanyaan tambahan.
+* **Jumlah Usaha yang Dimiliki Sendiri/Bersama:**  Penentuan jumlah usaha berdasarkan pengelolaan keuangan.
+* **Lapangan Usaha dari Usaha Utama:** Usaha utama adalah usaha yang menggunakan waktu terbanyak atau yang memberikan penghasilan terbesar jika waktu yang digunakan sama.
+* **Jumlah Pekerja yang Dibayar/Tidak Dibayar dari Usaha Utama:**  Jumlah pekerja dibayar/tidak dibayar.  Isikan 997/97 jika jumlah pekerja 1000/100 orang atau lebih; isikan 000/00 jika tidak ada pekerja.
+* **Omzet dari Usaha Utama Per Bulan (Rupiah):**  Contoh pengisian kode (ultra mikro, mikro, kecil, menengah, besar).
+* **Penyandang Disabilitas:**  Definisi dan ragam penyandang disabilitas berdasarkan UU No. 8 Tahun 2016. Konsep Kemensos; penjelasan akan disampaikan oleh pihak Kemensos.
+* **Keluhan Kesehatan Kronis/Menahun:** Penyakit kronis/menahun yang berlangsung lama (berbulan-bulan atau bertahun-tahun), tidak terjadi secara tiba-tiba, dan penyembuhannya memakan waktu lama. COVID-19 tidak dikategorikan penyakit kronis.  Tampilkan screenshot aplikasi.
+
+
+**Dukungan Dukcapil pada Pemutakhiran Data Bantuan Sosial**
+
+* **Rapat Koordinasi Nasional:** Implementasi penggunaan DTSEN untuk Bantuan Sosial, Pemberdayaan Sosial dan Program Penyelenggaraan Kesejahteraan Sosial.  Hera Mutiara, Ketua Tim Pengelolaan dan Pelayanan Data Kependudukan, Direktorat Pengelolaan Informasi Administrasi Kependudukan, 08-07-2025.
+* **Regulasi:** Pasal 5 Huruf E dan Penjelasannya UU No. 24 Tahun 2013 (Pemerintah melalui Menteri berwenang menyelenggarakan adminduk secara nasional, termasuk pengelolaan dan penyajian data kependudukan berskala nasional). Data kependudukan skala nasional diterbitkan berkala per semester (30 Juni dan 31 Desember).
+* **Data Kependuduakan Indonesia Semester I Tahun 2025:** Data jumlah penduduk menurut pulau.  Data perekaman KTP-el dan WKTP.
+* **Dinamika Kependudukan:** Peristiwa kependudukan yang harus dilaporkan (pindah datang, perubahan alamat, kelahiran, kematian, lahir mati, perkawinan, perceraian, pengakuan anak, pengesahan anak, pengangkatan anak, perubahan nama, perubahan status kewarganegaraan).
+* **Salah Satu Kriteria Utama: Perekaman KTP-el.**
+* **Pentingnya Perekaman Biometrik untuk Penunggalan Data:**  Data tunggal, data duplicate, penonaktifan data (penyebab: meninggal tidak lapor, pindah keluar negeri, tidak dikenal, tidak ditemukan saat jemput bola, WNA tidak sengaja tercatat sebagai WNI, WNI yang sudah menjadi WNA, data ganda, Wajib KTP belum rekam). Sumber informasi penonaktifan data.  Penduduk non-aktif dapat aktif kembali jika ditemukan masih hidup dan dapat merekam KTP-el dengan hasil rekam tunggal.
+* **Dukungan Dukcapil dalam Pemanfaatan Data Kependudukan:** Web service, web portal, card reader, face recognition, IKD, pemadanan data.
+* **Catatan Penting:** Data SIAK sudah terpusat, data dinamis.
+
+
+**Peran BPS Groundcheck DTSEN - Kemensos**
+
+* **Jakarta, 25 Februari 2025**
+* **Instruksi Presiden No. 4 Tahun 2025:** Tugas Badan Pusat Statistik (BPS): Menetapkan sumber dan jenis data serta pedoman integrasi data, menerima DTSEN dari Kementerian/Lembaga dan melakukan integrasi data, menyusun DTSEN yang akurat, terkini, dan terintegrasi, mengelola DTSEN, menyerahkan pemanfaatan DTSEN, melaporkan pelaksanaan DTSEN. Melakukan sinkronisasi dengan BPS untuk mendukung pemutakhiran data tunggal sosial dan ekonomi nasional.  Tugas Kementerian Sosial.
+* **Penyerahan DTSEN Sesuai Amanat Inpres:** BPS menyerahkan DTSEN kepada Menteri PPN/Kepala Bappenas, Menteri Sosial, dan Menko Pemberdayaan Masyarakat.  Jumlah penduduk dan keluarga (per 3 Februari).  Inpres No. 4/2025 tentang Data Tunggal Sosial Ekonomi Nasional. Data by name by address dilindungi Undang-Undang.
+* **Kerangka Kerja Data Tunggal Sosial Ekonomi Nasional:**  DTSEN menyatukan 3 jenis data sosial ekonomi ditambah data administratif lain untuk pemutakhiran data.  DTSEN divalidasi dengan data kependudukan di Dukcapil. Pengayaan dan validasi data (Regsosek, P3KE, DTKS).
+* **Kolaborasi Pemutakhiran (Ground Check):** Kemensos dengan BPS.
+* **Tindak Lanjut:** Pedoman bagi pakai data by name by address akan diatur melalui Peraturan Menteri PPN/Kepala Bappenas.
+* **Pemanfaatan DTSEN untuk Bantuan Sosial:** Penyaluran Bansos Tahap 1 (masa transisi), Tahap 2 dan seterusnya.  Sebelum penyaluran Bansos Tahap 2, Kemensos akan melakukan verifikasi data melalui ground check.  BPS berkomitmen untuk mendukung ground check dengan memberikan usulan variabel, pelatihan kepada Pendamping PKH, monitoring dan evaluasi, dan pemeringkatan ulang.
+* **Poin-poin Mengawal Pendataan:** Perkuat komunikasi dan kolaborasi, pendampingan pegawai BPS, sertakan peran Dinas Sosial, pendampingan melalui WA Group, tujuan pendampingan, buat koordinator dan tim, optimalkan penggunaan NSCC.
+* **Peran BPS Provinsi dan Kabupaten/Kota:** Pembinaan kepada pendamping PKH, pelatihan pengumpulan data variabel Ground Check DTSEN, monitoring dan evaluasi pelaksanaan Ground Check DTSEN.  Petugas Ground Check: Pendamping PKH (Kemensos).  Jumlah pendamping PKH.  Metode Pelatihan (pelatihan jarak jauh via Zoom). Jumlah peserta per kelas. Variabel Ground Check ditentukan oleh BPS; aplikasi pendataan dan dashboard dibangun oleh Kemensos. Pelatihan 2 tahap: Innas oleh Intama BPS RI; Pendamping PKH oleh Innas BPS Prov/Kab/Kota.
+* **Pemetaan Jumlah Pendamping PKH dan Innas:** Jumlah pendamping PKH dan kebutuhan Instruktur Nasional per provinsi.
+* **Tahapan Kegiatan:** Briefing BPS Provinsi Selindo, pencanangan Ground Check, pelatihan Instruktur Nasional, pelatihan Pendamping PKH, pelatihan Monev BPS Dinsos (tentative).
+* **Materi dan Rundown Pelatihan:** Pemaparan bahan ajar konsep dan definisi variabel, sosialisasi oleh Menteri Sosial dan Kepala BPS, organisasi lapangan oleh Kemensos, pengenalan aplikasi oleh Kemensos.
+* **Poin Diskusi:** Penyediaan akun Zoom, koordinasi BPS Provinsi dengan Dinsos, strategi untuk memastikan pendamping PKH memahami materi pelatihan.
+
+
+**Instruksi Presiden Republik Indonesia Nomor 4 Tahun 2025 Tentang Data Tunggal Sosial dan Ekonomi Nasional**
+
+Instruksi Presiden untuk optimalisasi integrasi data sosial dan ekonomi nasional.  Tugas Kementerian/Lembaga:  Mengambil langkah-langkah yang diperlukan, mendukung pelaksanaan integrasi data, menyampaikan data kepada BPS, menggunakan DTSEN sebagai sumber data utama.  Tugas khusus kepada Menko Bidang Pemberdayaan Masyarakat, Menko Bidang Perekonomian, Menteri Sosial, Menteri Dalam Negeri, Menteri ESDM, Menteri Desa dan Pembangunan Daerah Tertinggal, Menteri PPN/Kepala Bappenas, Menteri Keuangan, Menteri Kominfo, Menpan RB, Menteri Pendidikan Dasar dan Menengah, Menteri Pendidikan Tinggi, Riset dan Teknologi, Menteri Agama, Kepala BPS, Kepala BSSN, Kepala BPKP, Dirut BPJS Kesehatan, Dirut BPJSTK.  Pendanaan untuk pelaksanaan integrasi data.
+
+
+**Kesimpulan Menteri Sosial Rapat Koordinasi Nasional Penggunaan Data Tunggal Sosial dan Ekonomi Nasional (DTSEN)**
+
+DTSEN sebagai fondasi keadilan sosial, memastikan bantuan dan program tepat sasaran.  Amanat Presiden, amanat sejarah.  Sekolah Rakyat sebagai simbol kehadiran negara.  Tugas Kepala Dinsos.  Integritas dan kolaborasi.  Akurasi data menentukan masa depan bangsa.  Seruan untuk bangkit dan bergerak.
+
+
+**Data Tunggal Sosial dan Ekonomi Nasional (DTSEN) terhadap Kebijakan Bantuan Sosial, Pemberdayaan Sosial dan Program Kesejahteraan Sosial**
+
+* **Dasar Hukum:** Instruksi Presiden No. 4 Tahun 2025, Instruksi Presiden No. 8 Tahun 2025, Permensos No. 3 Tahun 2025, Kepmensos No. 79/HUK/2025.
+* **Proses Usulan Data:**  RT/RW, Kepala Lingkungan, Kepala Desa/Lurah/Dusun, Potensi dan Sumber Kesejahteraan Keluarga (PSKS), Masyarakat ke Perangkat Desa/Kelurahan, Aplikasi SIKS-NG, Aplikasi Cek Bansos, Aplikasi SIKS-CC, Usulan Dinas Sosial Kabupaten/Kota, Musyawarah Desa/Kelurahan. Verifikasi dan Validasi oleh PSKS menggunakan Aplikasi SIKS-MA. Penentuan Tingkat Kesejahteraan oleh BPS. Pengesahan oleh Pemerintah Daerah Kabupaten/Kota. Kanal Pengaduan Masyarakat.
+* **Variabel Lengkap DTSEN - Data Keluarga dan Data Individu.**
+* **Penerapan Peringkat Kesejahteraan untuk Penetapan Data Penerima Program:** Kelompok Desil, penerima bantuan program ATENSI, penerima PKH/SEMBAKO di luar kelompok desil.
+* **Penerapan Pemenuhan Program Tidak Dapat Dipenuhi:**  Bekerja sebagai ASN/TNI/POLRI/pegawai BUMN/BUMD/Pejabat Negara, alamat tidak ditemukan, individu tidak ditemukan, meninggal dunia.
+* **Penetapan Data Penerima Program Tanpa Memperhatikan Peringkat Kesejahteraan:** Situasi kebencanaan, Pemerlu Pelayanan Kesejahteraan Sosial ditemukan dalam kondisi tidak tertangani, kondisi lain yang mengancam keselamatan atau kedaruratan.
+* **Rekapitulasi Hasil Groundcheck (GC) DTSEN:** Jumlah KK (exclusion, inclusion, non-active, grand total). Rangkuman pelaksanaan Groundcheck (Kemensos-BPS).
+* **Penentuan Penerima Bansos Triwulan II:** Penerima Bansos Triwulan I yang tetap/tidak disalurkan pada Triwulan II.  Kaidah pemenuhan Bansos Triwulan II (exclusion error, mekanisme komplementaritas).
+* **Penentuan Peserta PBI Mei 2025:** Kaidah peserta PBI April yang tetap/tidak menjadi peserta PBI JK Mei 2025.  Kaidah pemenuhan kuota PBI JK.  Dasar pelaksanaan reaktivasi PBI JK.  Ketentuan reaktivasi peserta PBI.
+
+
+**Pemeringkatan Data Tunggal Sosial Ekonomi Nasional**
+
+* **Proses Integrasi Data (Pemadanan):** Relasi individu, relasi keluarga, penunggalan keluarga, penunggalan individu, verifikasi NIK, konfirmasi individu, keluarga, dan domisili.  Pemadanan data individu (Regsosek, P3KE, DTKS). Data Regsosek menjadi baseline. Data BPJS Kesehatan digunakan untuk konfirmasi domisili dan pemutakhiran status kematian.
+* **Penunggalan & Pengayaan Karakteristik/Variabel Pemeringkatan Status Kesejahteraan:**  Sumber data lain (PLN, BPJS Ketenagakerjaan).
+* **Metode Pemeringkatan DTSEN (Lengkap, Parsial):** DTSEN Model PMT Regsosek, GC pengembangan Model PMT, Pemutakhiran.  Pemeringkatan lengkap dan parsial.  Tujuan pemeringkatan lengkap (targeting pemberian bantuan sosial). Relasi keluarga.  Persentase padan Regsosek x P3KE x DTKS.
+* **Tantangan Pemeringkatan:** Pemeringkatan dilakukan untuk seluruh keluarga, cakupan dan ketersediaan variabel ketiga sumber data berbeda.
+* **Tantangan Perbedaan Variabel Penciri Kesejahteraan:**  Variabel penciri kesejahteraan (Regsosek, P3KE, DTKS).
+* **Pemeringkatan DTSEN Lengkap:**  Menggunakan Model PMT Regsosek, imputasi regresi variabel P3KE, scoring variabel DTKS. Kombinasi peringkat berdasarkan rata-rata skor pengeluaran listrik. Perbandingan antar kelompok kesejahteraan.  Proses pemeringkatan pada level kabupaten/kota.  Pemeringkatan DTSEN lengkap pada level nasional (konsisten dengan angka kemiskinan makro, menggunakan pembobot berdasarkan rasio garis kemiskinan nasional).
+* **Evaluasi Metode Pemeringkatan DTSEN:** Evaluasi umum DTSEN dengan penerima bantuan Triwulan I 2025. Persentase penerima bantuan menurut jenis bantuan, desil, dan metode.  IE/EE.
+* **Catatan Pemeringkatan DTSEN Lengkap:** Metode pemeringkatan lengkap (awal) hanya digunakan pada saat integrasi tiga data utama.  Yang lebih berperan pada pemeringkatan DTSEN awal adalah kombinasi peringkat dari ketiga sumber data.  Peringkat nasional dibentuk berdasarkan angka kemiskinan makro Susenas.  DTSEN bagai bayi yang baru lahir.
+* **Metode Pemeringkatan Parsial (GC):**  Distribusi persentil, prediksi pengeluaran per kapita, posisi peringkat, penyesuaian berdasarkan kriteria keluarga tertentu, peran masyarakat, perangkingan kembali untuk seluruh data di DTSEN.
+* **Variabel Lengkap DTSEN:** 26 Informasi Keluarga, 13 Informasi Individu.
+* **Urutan Variabel yang Berperan pada Model PMT:**  Aset bergerak, ijazah/STTB, jumlah anggota keluarga, bahan bakar memasak, sumber air minum, lapangan usaha & status pekerjaan, sumber penerangan, jenis lantai, jenis kloset, fasilitas BAB, jenis dinding, jenis atap, status kepemilikan bangunan, tempat pembuangan akhir tinja.
+* **Catatan Pemeringkatan DTSEN Hasil GC:** Pemeringkatan hasil GC tidak bisa 100% benar.  Perkiraan IE/EE.  Pemeringkatan GC belum melibatkan Forum Masyarakat.  Sumber error PMT.
+* **Metode Pemeringkatan Pemutakhiran (Pengembangan Model PMT).**
+* **Rencana Perbaikan Pemeringkatan Keluarga Pemutakhiran DTSEN:** Memperkaya variabel kepemilikan aset, memanfaatkan data administrasi, melibatkan informasi dari Forum Komunikasi ke Publik, mengembangkan Model PMT Machine Learning dan PMT SAE Multilevel, memanfaatkan foto kondisi rumah, pengembangan distribusi pengeluaran perkapita Susenas, membuat sistem otomatis pemeringkatan.
+* **Solusi Perbaikan Kesalahan (IE/EE):** Mengoptimalkan mekanisme pembaharuan, usul-sanggah dan verifikasi lapangan, pelibatan masyarakat.
+* **Ringkasan Pemeringkatan Data DTSEN:** Data awal, data hasil GC, data pemutakhiran.  Menggunakan model PMT Regsosek, memanfaatkan 39 variabel dan forum masyarakat, menggunakan model PMT yang dikembangkan dengan Machine Learning, memanfaatkan data administrasi, memanfaatkan foto kondisi rumah.
+* **Ilustrasi Desil dan Pengeluaran Perkapita:**  Pengertian desil, ilustrasi desil pada pengeluaran per kapita.
+* **Pemeringkatan DTSEN Lengkap:** Menetapkan mekanisme pemeringkatan antar kelompok, mendapatkan peringkat kesejahteraan keluarga pada tingkat kab/kota, provinsi, dan nasional.  Menggunakan pendekatan distribusi Burr XII. Strategi pemeringkatan Bottom-Up.  Pemeringkatan DTSEN lengkap pada level nasional (prediksi pengeluaran perkapita sintetik).
+* **Proxy Mean Test (PMT):** Metode yang memprediksi tingkat konsumsi rumah tangga. Model PMT dibangun berdasarkan regresi konsumsi per kapita spesifik kabupaten/kota.  Bank Dunia mempromosikan PMT.
+* **Model Umum PMT:**  Rumus model PMT.
+* **Evaluasi Metode Pemeringkatan DTSEN:** Evaluasi umum pemeringkatan DTSEN dengan Susenas 2024.  Ukuran DTSEN awal, IE/EE.
+* **Target Pemeringkatan GC:** Data hasil pendataan Keluarga GC DTSEN (lanjut survei, tidak lanjut survei).  Update pemeringkatan berdasarkan data GC.
+
+
+**Arahan Menteri Sosial Rapat Koordinasi Nasional Dinas Sosial**
+
+Dasar hukum, tentang DTSEN, bantuan sosial, pemberdayaan sosial, perlindungan sosial, graduasi, bisnis proses penyelenggaraan kesejahteraan sosial.
+
+
+**Dukungan DTSEN untuk Bantuan Sosial, Pemberdayaan Sosial, dan Program Penyelenggaraan Kesejahteraan Sosial**
+
+* **Data Tunggal Sosial dan Ekonomi Nasional (DTSEN):** Jumlah penduduk dan keluarga (per 3 Februari). Penunggalan individu, penunggalan keluarga, penguatan variabel, pemeringkatan kesejahteraan.  Kondisi data sosial dan ekonomi (Dukcapil, DTKS, P3KE, Regsosek, BPJS, PLN). DTSEN: hasil kolaborasi mewujudkan Instruksi Presiden.
+* **Inpres Nomor 4/2025 tentang DTSEN:** Peran dan tugas Kepala BPS.
+* **BPS Membangun dan Menyerahkan DTSEN:**  Penyerahan hasil pembangunan DTSEN.
+* **Ground Check oleh BPS dan Kemensos:** Ground check untuk mengecek inclusion error dan exclusion error.  Hasil ground check digunakan BPS untuk memutakhirkan DTSEN.
+* **Kolaborasi Pemanfaatan DTSEN untuk Bansos:** DTSEN dimanfaatkan untuk penyaluran Bansos pada Triwulan 2-2025.
+* **Update DTSEN dengan Data Administrasi dan Survei BPS:** DTSEN per 9 Mei 2025 dan 25 Juni 2025.
+* **Kolaborasi Pemanfaatan DTSEN dalam Program Perumahan:** DTSEN sebagai basis data untuk menyalurkan program bantuan perumahan.
+* **Peran BPS dalam Tim Penyelenggaraan Sekolah Rakyat:** Pemadanan data calon peserta didik dengan DTSEN.
+* **Dukungan BPS untuk Program Sekolah Rakyat:** Surat Sekjen Kemensos.  Verifikasi lapangan, usulan melalui link pendaftaran Satgas Penerimaan Peserta Didik Sekolah Rakyat.  Data di luar desil 1 DTSEN.  Proses seleksi.
+* **Persentase dan Jumlah Penduduk 7-18 Tahun Menurut Status Sekolah:** Data penduduk usia 7-18 tahun menurut status sekolah (Maret 2024).
+* **Pemanfaatan DTSEN untuk Penjaringan Calon Siswa Sekolah Rakyat:** Contoh profil keluarga dari anak usia sekolah (Desil 1 dan 2, Kota Bandung).
+
+
+**Tentang Sekolah Rakyat**
+
+Tugas Kementerian Sosial dan Pemerintah Daerah.  Sekolah Rakyat: Negara hadir untuk memuliakan orang miskin.  Jenis Sekolah Rakyat (rintisan, permanen).  Lokasi Sekolah Rakyat.  Kurikulum Sekolah Rakyat.  Jumlah siswa, guru, dan tenaga kependidikan.  Optimalisasi Sekolah Rakyat dalam pengentasan kemiskinan.  Pesan kunci kampanye Sekolah Rakyat.

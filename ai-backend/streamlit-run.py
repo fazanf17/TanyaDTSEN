@@ -19,7 +19,6 @@ st.set_page_config(page_title="Tanya DTSEN", page_icon="🤖", layout="wide")
 st.markdown("""
 <style>
 a.doc-link, a.doc-link:visited {
-    color: white !important;         /* Default putih */
     text-decoration: none !important; /* Hilangkan underline */
 }
 a.doc-link:hover {
@@ -30,36 +29,35 @@ a.doc-link:hover {
 """, unsafe_allow_html=True)
 
 # --- Sidebar untuk daftar dokumen ---
+st.sidebar.markdown("Tanya DTSEN adalah chatbot AI berbasis RAG yang membantu memahami segala hal tentang DTSEN (Data Tunggal Sosial Ekonomi Nasional)")
 st.sidebar.title("📂 Daftar Dokumen")
-base_dir = os.path.dirname(__file__)  # folder ai-backend
-pdf_folder = os.path.abspath(os.path.join(base_dir, "..", "bahan-chatbot", "pdf"))
-# pdf_folder = os.path.abspath(os.path.join("..", "bahan-chatbot", "pdf"))
-if os.path.exists(pdf_folder):
-    pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith(".pdf")]
-    if pdf_files:
-        for pdf in sorted(pdf_files):
-            display_name = os.path.splitext(pdf)[0].replace("_", " ").title()
-            # Path folder PDF relatif terhadap lokasi main.py
-            base_dir = os.path.dirname(__file__)  # folder ai-backend
-            pdf_folder = os.path.abspath(os.path.join(base_dir, "..", "bahan-chatbot", "pdf"))
 
-            pdf_path = os.path.join(pdf_folder, pdf).replace("\\", "/")
-            # pdf_path = "file:../bahan-chatbot/pdf/" + os.path.join(pdf_folder, pdf).replace("\\", "/")
-            # pdf_url = "file://" + pdf_path
-            st.sidebar.markdown(
-                f"""
-                <div style="margin-bottom:4px; font-size:14px;">
-                    <a href="{pdf_path}" target="_blank" class="doc-link">
-                        {display_name}
-                    </a>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-    else:
-        st.sidebar.info("Tidak ada dokumen PDF ditemukan.")
-else:
-    st.sidebar.error("Folder dokumen tidak ditemukan.")
+# Daftar dokumen sudah terdefinisi
+dokumen_list = [
+    ("Bahan Ajar Groundcheck DTSEN", "https://drive.google.com/file/d/1ffTqe2HK7uZms4DSAiTRBfexc5I3vIrg/view?usp=sharing"),
+    ("Bahan Kemensos Panel", "https://drive.google.com/file/d/1WI496xHu2ILiSri0TniC9I2STjMJwyBG/view?usp=sharing"),
+    ("Briefing Groundcheck Provinsi", "https://drive.google.com/file/d/1ZWc60P_LZ6402OQGLeSKXbskaD8r6Jjt/view?usp=sharing"),
+    ("Inpres Nomor 4 Tahun 2025", "https://drive.google.com/file/d/1susFuD75VrK0hWWon1UO60h6VSXYV8fS/view?usp=sharing"),
+    ("Kesimpulan Rapat Koordinasi Nasional Penggunaan DTSEN", "https://drive.google.com/file/d/1J-b80FKCD654vtmYI24BKH4sh-TKYq-T/view?usp=sharing"),
+    ("Paparan Kebijakan DTSEN Rakornas", "https://drive.google.com/file/d/1U2wLFEQoDrNSI7eha_MP9tEZ_mIhNpZS/view?usp=sharing"),
+    ("Pemeringkatan DTSEN Kemensos", "https://drive.google.com/file/d/1sqsyoFk3Rvy_wvq8-6ABlX7iHeay5e7D/view?usp=sharing"),
+    ("Permensos No 3 Tahun 2025", "https://drive.google.com/file/d/1KFUB2N-KshkB_wwcJzqPDEAEy93rlWMO/view?usp=sharing"),
+    ("Rakornas Dinsos", "https://drive.google.com/file/d/1RFuHz8jFyB9Oe-dQKF_0nY82d4kruOc1/view?usp=sharing"),
+    ("Rakornas Kemensos", "https://drive.google.com/file/d/1OFDpc3_dpLwPSDwpo8HTp6JEYrLWJEez/view?usp=sharing"),
+]
+
+
+for nama, link in dokumen_list:
+    st.sidebar.markdown(
+        f"""
+        <div style="margin-bottom:4px; font-size:14px;">
+            <a href="{link}" target="_blank" class="doc-link">
+                {nama}
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # --- Garis pembatas ---
 st.sidebar.markdown("---")
@@ -173,3 +171,4 @@ if question := st.chat_input("Tulis pertanyaan kamu..."):
 
     # Simpan jawaban
     st.session_state.messages.append({"role": "assistant", "text": streamed_text.strip()})
+
