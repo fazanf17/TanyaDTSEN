@@ -7,6 +7,8 @@ import os
 import json
 import hashlib
 from IPython.display import display, Markdown  # Untuk Jupyter/Colab
+import concurrent.futures
+from typing import Union
 
 PROMPT_TEMPLATES = {
     "single_chunk_qa": """Anda adalah Asisten AI Analis Dokumen yang sangat teliti.
@@ -89,6 +91,23 @@ class TxtChatbot:
         if not self.models:
             return None
         return self.models[self.current_model_index]
+        
+    #metode baru ini
+    def _extract_info_from_chunk(self, chunk: str, user_question: str) -> Union[str, None]:
+        """
+        Fungsi pekerja yang memformat prompt dan memanggil model untuk satu chunk.
+        Dirancang untuk dijalankan secara paralel.
+        """
+        extract_prompt = PROMPT_TEMPLATES["extractor"].format(
+            user_question=user_question, 
+            chunk=chunk
+        )
+        response_text = self._call_model(extract_prompt)
+        
+        # Kembalikan teks hanya jika relevan, jika tidak kembalikan None
+        if response_text and "tidak ada informasi relevan" not in response_text.lower():
+            return response_text
+        return None
 
     def _switch_to_next_model(self) -> bool:
         """
@@ -217,20 +236,28 @@ class TxtChatbot:
         # Kasus 2: Teks panjang (beberapa chunk), gunakan strategi Map-Reduce
         else:
             relevant_info = []
-            print(f"📊 Menganalisis {len(chunks)} bagian teks...")
-            for i, chunk in enumerate(chunks):
-                print(f"⏳ Mengekstrak info dari bagian {i+1}/{len(chunks)}...", end='\r')
-                extract_prompt = PROMPT_TEMPLATES["extractor"].format(
-                    user_question=user_question, 
-                    chunk=chunk
-                )
-                response_text = self._call_model(extract_prompt)
-                
-                # Tambahkan hanya jika respons berisi dan bukan pesan 'tidak relevan'
-                if response_text and "tidak ada informasi relevan" not in response_text.lower():
-                    relevant_info.append(response_text)
+            print(f"📊 Menganalisis {len(chunks)} bagian teks secara paralel...")
             
-            print("\n✅ Ekstraksi selesai.")
+            # Menggunakan ThreadPoolExecutor untuk menjalankan ekstraksi secara bersamaan
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                # Membuat 'future' untuk setiap chunk. 'submit' akan langsung mengembalikan
+                # objek 'future' tanpa menunggu eksekusi selesai.
+                future_to_chunk = {
+                    executor.submit(self._extract_info_from_chunk, chunk, user_question): chunk 
+                    for chunk in chunks
+                }
+                
+                # Mengumpulkan hasil saat setiap 'future' selesai
+                for i, future in enumerate(concurrent.futures.as_completed(future_to_chunk)):
+                    print(f"⏳ Menyelesaikan ekstraksi bagian {i+1}/{len(chunks)}...", end='\r')
+                    try:
+                        result = future.result()
+                        if result:
+                            relevant_info.append(result)
+                    except Exception as exc:
+                        print(f'\n❌ Chunk menghasilkan exception: {exc}')
+
+            print("\n✅ Ekstraksi paralel selesai.")
 
             if not relevant_info:
                 return "Informasi yang relevan dengan pertanyaan Anda tidak ditemukan di dalam dokumen."
@@ -258,32 +285,6 @@ AVAILABLE_MODELS = [
     "models/gemini-1.5-pro",  
     "models/gemini-1.5-flash-latest"
 ]
-
-# def init_model():
-#     try:
-#         genai.configure(api_key=API_KEY)
-#         print("✅ API Key configured!")
-#     except Exception as e:
-#         print(f"❌ Gagal mengkonfigurasi API Key: {e}")
-#         exit()
-
-#     my_generation_config = {
-#         "temperature": 0.5,
-#         "max_output_tokens": 4096,
-#         "top_p": 0.6
-#     }
-#     my_safety_settings = {
-#         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-#         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-#         HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-#         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-#     }
-
-#     return genai.GenerativeModel(
-#         model_name=AVAILABLE_MODELS,
-#         generation_config=my_generation_config,
-#         safety_settings=my_safety_settings
-#     )
 
 def init_chatbot():
     """
@@ -330,8 +331,5 @@ def init_chatbot():
 if __name__ == "__main__":
     # Pastikan chatbot berhasil diinisialisasi sebelum digunakan
     chatbot = init_chatbot()
-    if chatbot:
-        # Lakukan sesuatu dengan chatbot, misalnya:
-        chatbot.get_info()
-        # response = chatbot.get_response("Apa itu PDB?")
-        # print(response)
+    # if chatbot:
+    #     chatbot.get_info()
