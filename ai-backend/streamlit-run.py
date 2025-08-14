@@ -150,14 +150,30 @@ if question := st.chat_input("Tulis pertanyaan kamu..."):
     st.session_state.messages.append({"role": "user", "text": question})
     st.markdown(f'<div class="user-bubble">{question}</div>', unsafe_allow_html=True)
 
-    # Placeholder untuk animasi bot berpikir
     placeholder = st.empty()
+    loading_text = "Memproses Jawaban"
 
-    loading_text = "🤖 Sedang berpikir"
-    for i in range(6):  # loop animasi titik berjalan
-        dots = "." * (i % 4)
-        placeholder.markdown(f'<div class="bot-bubble">{loading_text}{dots}</div>', unsafe_allow_html=True)
+    # Loop animasi titik berjalan ala chat minimalis
+    for i in range(12):  # looping beberapa kali
+        dots = " " + "." * ((i % 3) + 1)  # titik 1-3
+        placeholder.markdown(
+            f'''
+            <div style="
+                display:inline-block;
+                padding:8px 12px;
+                border-radius:20px;
+                background-color:#f5f5f5;
+                color:#333;
+                font-family:sans-serif;
+                font-size:14px;
+            ">
+                <i>{loading_text}{dots}<i>
+            </div>
+            ''',
+            unsafe_allow_html=True
+        )
         time.sleep(0.4)
+
 
     # Ambil jawaban bot
     answer = st.session_state.chatbot.get_response(question)
