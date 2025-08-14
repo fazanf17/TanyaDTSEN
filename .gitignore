@@ -1,0 +1,9 @@
+# Ignore file sampah Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+.env

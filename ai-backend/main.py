@@ -47,7 +47,7 @@ PROMPT_TEMPLATES = {
 }
 
 AVAILABLE_MODELS = [
-    "models/gemini-2.5-pro",
+    # "models/gemini-2.5-pro",
     "models/gemini-2.5-flash",
     "models/gemini-2.0-flash",
     "models/gemini-2.0-flash-001",
@@ -269,11 +269,16 @@ class VectorRAGChatbot:
         # --- LANGKAH 2: PROSES RAG (Retrieval & Generation) ---
         # Proses ini sama untuk kedua jalur, namun hasilnya akan diperlakukan berbeda.
         try:
+            print(f"✅ Collection name: {self.collection.name}")
+            print(f"📦 Document count: {self.collection.count()}")
+            print(f"Berhasil retrieval dari Vector DB!")
+
             question_embedding = self._get_embedding(user_question, "RETRIEVAL_QUERY")
             results = self.collection.query(
                 query_embeddings=[question_embedding], n_results=3
             )
             retrieved_chunks = results['documents'][0]
+            # print(retrieved_chunks)
         except Exception as e:
             print(f"❌ Gagal saat retrieval dari Vector DB: {e}")
             return "Maaf, terjadi masalah saat mencari informasi di dalam dokumen."
