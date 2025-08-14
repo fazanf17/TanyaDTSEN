@@ -23,6 +23,7 @@ except ImportError:
     pass
 import chromadb
 
+
 # (PROMPT_TEMPLATES dan AVAILABLE_MODELS tetap sama)
 
 PROMPT_TEMPLATES = {
