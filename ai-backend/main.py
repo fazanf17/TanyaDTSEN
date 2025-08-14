@@ -9,6 +9,7 @@ import uuid
 import hashlib # Untuk membuat hash file
 import sys
 
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 # Gunakan sqlite3 versi pysqlite3-binary
 try:
     import pysqlite3
