@@ -5,8 +5,9 @@ blinker==1.9.0
 cachetools==5.5.2
 certifi==2025.8.3
 charset-normalizer==3.4.3
-chromadb
+chromadb==0.4.22
 click==8.1.8
+duckdb==0.9.1
 gitdb==4.0.12
 GitPython==3.1.45
 google-ai-generativelanguage==0.6.15
@@ -26,6 +27,7 @@ jsonschema-specifications==2025.4.1
 MarkupSafe==3.0.2
 narwhals==2.1.0
 numpy==2.0.2
+onnxruntime==1.16.3
 packaging==25.0
 pandas==2.3.1
 pillow==11.3.0
