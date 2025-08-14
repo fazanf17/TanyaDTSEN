@@ -7,6 +7,14 @@ import os
 import json
 import uuid
 import hashlib # Untuk membuat hash file
+import sys
+
+# Gunakan sqlite3 versi pysqlite3-binary
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except ImportError:
+    pass
 import chromadb
 
 # (PROMPT_TEMPLATES dan AVAILABLE_MODELS tetap sama)

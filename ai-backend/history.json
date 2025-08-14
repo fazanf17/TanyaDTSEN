@@ -1,9 +1,5 @@
 [
     [
-        "jelaskan lebih lengkap dong",
-        "DTSEN (Data Tunggal Sosial dan Ekonomi Nasional) adalah basis data tunggal nasional yang berisi informasi sosial dan ekonomi masyarakat. Fungsinya sebagai acuan utama pemerintah untuk menetapkan sasaran program bantuan sosial, pemberdayaan, dan kesejahteraan, guna memastikan bantuan tepat sasaran.\n\nKebijakan ini didasarkan pada Instruksi Presiden dan Peraturan Menteri Sosial. Data yang dikumpulkan sangat rinci, meliputi:\n1.  **Informasi Individu:** NIK, nama, tanggal lahir, pendidikan, pekerjaan, kepemilikan usaha, status disabilitas, dan penyakit kronis.\n2.  **Informasi Keluarga/Rumah Tangga:** Alamat lengkap dengan geotagging (koordinat), status kepemilikan rumah, kondisi bangunan (jenis lantai, dinding, atap), sumber air dan listrik, serta kepemilikan aset.\n\nPemutakhiran data menjadi tanggung jawab Menteri Sosial dan dilakukan melalui proses sinkronisasi dalam sistem SIKS-NG (Sistem Informasi Kesejahteraan Sosial Next-Generation). Usulan perubahan data dapat diajukan oleh Pemerintah Daerah, Kementerian Sosial, atau masyarakat, yang kemudian akan melalui proses verifikasi dan validasi. Pengguna data dari berbagai instansi harus mendapat persetujuan Menteri."
-    ],
-    [
         "apa itu pemeringkatan DTSEN?",
         "Berdasarkan informasi yang tersedia, tidak ada penjelasan mengenai \"pemeringkatan DTSEN\". Informasi yang diberikan lebih fokus pada definisi, fungsi, pengelolaan, akses, penggunaan, dan pelaporan DTSEN."
     ],
@@ -38,5 +34,9 @@
     [
         "Kenapa kamu tidak menyebutkan tentan Regsoses dalam peran tersebut?",
         "Anda benar, peran BPS sebagai pelaksana dan penyedia data Regsosek adalah poin krusial yang belum disebutkan.\n\nBPS adalah lembaga yang melaksanakan pendataan Regsosek secara nasional. Data hasil Regsosek ini kemudian menjadi *baseline* atau data dasar utama yang diintegrasikan untuk membangun DTSEN.\n\nJadi, selain peran dalam pemutakhiran dan verifikasi lapangan (*ground check*) yang sudah dijelaskan, peran paling mendasar BPS adalah sebagai penyedia data awal yang membentuk kerangka DTSEN."
+    ],
+    [
+        "apa itu DTSEN?",
+        "DTSEN (Data Tunggal Sosial dan Ekonomi Nasional) adalah basis data tunggal nasional yang berisi informasi sosial dan ekonomi masyarakat. Fungsinya sebagai acuan utama pemerintah untuk menetapkan sasaran program bantuan sosial, pemberdayaan, dan kesejahteraan, guna memastikan bantuan tepat sasaran.\n\nKebijakan ini didasarkan pada Instruksi Presiden dan Peraturan Menteri Sosial. Data yang dikumpulkan sangat rinci, mencakup informasi individu dan rumah tangga. Untuk menentukan kelayakan penerima bantuan, data ini melalui proses pemeringkatan yang mengintegrasikan data dari berbagai sumber seperti Regsosek, P3KE, dan DTKS. Menteri Sosial bertanggung jawab penuh atas data ini, dan penggunaannya oleh pihak lain wajib mendapat persetujuan tertulis dari Menteri."
     ]
 ]
