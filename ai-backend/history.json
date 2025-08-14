@@ -1,9 +1,5 @@
 [
     [
-        "pemeringkatan DTSEN itu apa?",
-        "Pemeringkatan DTSEN adalah proses penyusunan peringkat data sosial dan ekonomi masyarakat. Proses ini dilakukan pada level nasional dan kabupaten/kota, menggabungkan peringkat dari tiga sumber data utama: Regsosek, P3KE, dan DTKS. Tujuannya adalah untuk menghasilkan peringkat lengkap yang konsisten dengan angka kemiskinan makro (ekstrem, miskin, rentan miskin) di seluruh kabupaten/kota. Metode ini menggunakan pembobot dari rasio garis kemiskinan nasional dengan kabupaten/kota, memungkinkan sinergi antara data kemiskinan mikro dan makro untuk penargetan bantuan yang lebih tepat sasaran."
-    ],
-    [
         "jelaskan lebih detail dong",
         "Pemeringkatan DTSEN adalah proses penyusunan peringkat data sosial dan ekonomi masyarakat pada level nasional dan kabupaten/kota. Proses ini mengintegrasikan dan memadankan data dari Regsosek (sebagai *baseline*), P3KE, dan DTKS.\n\nIntegrasi data melibatkan pemadanan individu dan keluarga melalui verifikasi NIK, serta konfirmasi domisili. Sumber data lain seperti Dukcapil, BPJS Kesehatan, PLN, dan BPJS Ketenagakerjaan juga digunakan untuk memperkaya dan memutakhirkan karakteristik data.\n\nTujuannya adalah menghasilkan peringkat kesejahteraan yang lengkap dan konsisten dengan angka kemiskinan makro (ekstrem, miskin, rentan miskin), sebagai dasar penargetan bantuan sosial. Metode yang digunakan meliputi DTSEN Model PMT Regsosek, GC Pengembangan Model PMT, dan Pemutakhiran, yang dapat bersifat lengkap atau parsial tergantung kelengkapan data dari berbagai sumber."
     ],
@@ -42,5 +38,9 @@
     [
         "apa peran BPS dalam DTSEN?",
         "Berdasarkan informasi yang diberikan, peran BPS dalam DTSEN meliputi:\n\n1.  **Pemutakhiran dan Penyediaan Data:** BPS menggunakan hasil *ground check* (pengecekan lapangan) serta data dari survei internalnya (seperti Susenas, Sakernas) untuk memutakhirkan DTSEN secara berkala.\n\n2.  **Kolaborasi Verifikasi Lapangan:** BPS bekerja sama dengan Kementerian Sosial dalam proses *ground check*. Perannya mencakup pengusulan variabel verifikasi, melakukan monitoring dan evaluasi, serta melakukan pemeringkatan ulang data berdasarkan hasil verifikasi.\n\n3.  **Pelatihan dan Pembinaan:** BPS memberikan pelatihan kepada para Pendamping PKH mengenai konsep, definisi, dan teknis pengumpulan data untuk menjaga kualitas dan ketepatan pemutakhiran.\n\n4.  **Dukungan Program:** Dalam program spesifik seperti Sekolah Rakyat, BPS membantu memadankan data calon peserta didik dengan DTSEN dan memberikan informasi peringkat kesejahteraan keluarganya untuk seleksi."
+    ],
+    [
+        "apa itu DTSEN?",
+        "DTSEN (Data Tunggal Sosial dan Ekonomi Nasional) adalah basis data tunggal nasional yang berisi informasi sosial dan ekonomi masyarakat. Fungsinya sebagai acuan utama pemerintah untuk menetapkan sasaran program bantuan sosial, pemberdayaan, dan kesejahteraan, guna memastikan bantuan tepat sasaran.\n\nKebijakan ini didasarkan pada Instruksi Presiden dan Peraturan Menteri Sosial Tahun 2025. Data yang sangat rinci ini, mencakup informasi individu dan rumah tangga, melalui proses pemeringkatan dengan mengintegrasikan data dari Regsosek, P3KE, dan DTKS. Menteri Sosial bertanggung jawab penuh atas data ini, dan penggunaannya oleh pihak lain wajib mendapat persetujuan tertulis dari Menteri."
     ]
 ]
