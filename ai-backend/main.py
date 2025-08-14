@@ -9,7 +9,12 @@ import uuid
 import hashlib # Untuk membuat hash file
 import sys
 
+# Matikan telemetry ChromaDB sebelum library di-load
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
+# Patch juga kalau telemetry tetap nyangkut lewat sentry-sdk
+os.environ["DISABLE_SENTRY"] = "True"
+
 # Gunakan sqlite3 versi pysqlite3-binary
 try:
     import pysqlite3
